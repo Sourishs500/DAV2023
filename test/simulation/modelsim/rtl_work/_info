@@ -1,0 +1,47 @@
+m255
+K4
+z2
+!s99 nomlopt
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/ssour/Documents/DAV 2023/test/simulation/modelsim
+T_opt
+!s110 1698198443
+Vo0Zao2YBPj>g;@>@[HdoC0
+04 4 4 work test fast 0
+=1-6ca1004feef8-653873aa-3cb-45b0
+!s124 OEM10U1 
+o-quiet -auto_acc_if_foreign -work work
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.2;73
+vtest
+DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+!s110 1698198437
+!i10b 1
+!s100 =X;g8ReoU<VP0RnW6=a:=0
+I3Nb2bJj2gmIM^KZeH`PON1
+S1
+R0
+w1698197843
+8C:/Users/ssour/Documents/DAV 2023/test/test.sv
+FC:/Users/ssour/Documents/DAV 2023/test/test.sv
+!i122 0
+L0 3 16
+VDg1SIo80bB@j0V0VzS_@n1
+OL;L;2021.2;73
+r1
+!s85 0
+31
+!s108 1698198437.000000
+!s107 C:/Users/ssour/Documents/DAV 2023/test/test.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/ssour/Documents/DAV 2023/test|C:/Users/ssour/Documents/DAV 2023/test/test.sv|
+!i113 0
+o-sv -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+!s92 -sv -work work {+incdir+C:/Users/ssour/Documents/DAV 2023/test} -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1

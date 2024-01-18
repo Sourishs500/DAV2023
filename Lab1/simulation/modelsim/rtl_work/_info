@@ -1,0 +1,74 @@
+m255
+K4
+z2
+!s99 nomlopt
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/ssour/Documents/DAV 2023/Lab1/simulation/modelsim
+T_opt
+!s110 1699843767
+VHMf]ki]VZfc9Ih`ozR4`V1
+04 16 4 work sevenSegDigit_tb fast 0
+=1-6ca1004feef8-65518eb6-318-820
+!s124 OEM10U2 
+o-quiet -auto_acc_if_foreign -work work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.2;73
+vsevenSegDigit
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 !s110 1699843760
+!i10b 1
+!s100 LVoFzYlDnXV<c8N1j0EIN2
+I:@gkR]]Q@QZ6U>f5jD1_]2
+S1
+R0
+w1699843706
+8C:/Users/ssour/Downloads/sevenSegDigit.sv
+FC:/Users/ssour/Downloads/sevenSegDigit.sv
+!i122 0
+L0 1 58
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2021.2;73
+r1
+!s85 0
+31
+!s108 1699843759.000000
+!s107 C:/Users/ssour/Downloads/sevenSegDigit.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/ssour/Downloads|C:/Users/ssour/Downloads/sevenSegDigit.sv|
+!i113 0
+Z6 o-sv -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+!s92 -sv -work work +incdir+C:/Users/ssour/Downloads -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+nseven@seg@digit
+vsevenSegDigit_tb
+R2
+R3
+!i10b 1
+!s100 7U=2YO^F0fa02m]_R:gSS2
+I`HbdkhIRz=ZC:=TB0KRO<0
+S1
+R0
+w1699843644
+8C:/Users/ssour/Documents/DAV 2023/Lab1/sevenSegDigit_tb.sv
+FC:/Users/ssour/Documents/DAV 2023/Lab1/sevenSegDigit_tb.sv
+!i122 1
+L0 3 19
+R4
+R5
+r1
+!s85 0
+31
+!s108 1699843760.000000
+!s107 C:/Users/ssour/Documents/DAV 2023/Lab1/sevenSegDigit_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/ssour/Documents/DAV 2023/Lab1|C:/Users/ssour/Documents/DAV 2023/Lab1/sevenSegDigit_tb.sv|
+!i113 0
+R6
+!s92 -sv -work work {+incdir+C:/Users/ssour/Documents/DAV 2023/Lab1} -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+nseven@seg@digit_tb

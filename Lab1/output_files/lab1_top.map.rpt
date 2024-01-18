@@ -1,0 +1,796 @@
+Analysis & Synthesis report for lab1_top
+Mon Nov 13 01:26:45 2023
+Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for Inferred Entity Instance: sevenSegDisplay:UUT|lpm_divide:Mod0
+ 11. Parameter Settings for Inferred Entity Instance: sevenSegDisplay:UUT|lpm_divide:Div0
+ 12. Parameter Settings for Inferred Entity Instance: sevenSegDisplay:UUT|lpm_divide:Mod1
+ 13. Parameter Settings for Inferred Entity Instance: sevenSegDisplay:UUT|lpm_divide:Div1
+ 14. Parameter Settings for Inferred Entity Instance: sevenSegDisplay:UUT|lpm_divide:Mod2
+ 15. Parameter Settings for Inferred Entity Instance: sevenSegDisplay:UUT|lpm_divide:Div2
+ 16. Parameter Settings for Inferred Entity Instance: sevenSegDisplay:UUT|lpm_divide:Mod3
+ 17. Parameter Settings for Inferred Entity Instance: sevenSegDisplay:UUT|lpm_divide:Div3
+ 18. Parameter Settings for Inferred Entity Instance: sevenSegDisplay:UUT|lpm_divide:Mod4
+ 19. Parameter Settings for Inferred Entity Instance: sevenSegDisplay:UUT|lpm_divide:Div4
+ 20. Parameter Settings for Inferred Entity Instance: sevenSegDisplay:UUT|lpm_divide:Mod5
+ 21. Post-Synthesis Netlist Statistics for Top Partition
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Nov 13 01:26:45 2023       ;
+; Quartus Prime Version              ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
+; Revision Name                      ; lab1_top                                    ;
+; Top-level Entity Name              ; miniALU_top                                 ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 1,834                                       ;
+;     Total combinational functions  ; 1,834                                       ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 58                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M50DAF484C7G     ;                    ;
+; Top-level entity name                                            ; miniALU_top        ; lab1_top           ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                        ;
++---------------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path      ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                               ; Library ;
++---------------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; ../../../Downloads/sevenSegDisplay.sv ; yes             ; User SystemVerilog HDL File  ; C:/Users/ssour/Downloads/sevenSegDisplay.sv                                ;         ;
+; ../../../Downloads/miniALU.sv         ; yes             ; User SystemVerilog HDL File  ; C:/Users/ssour/Downloads/miniALU.sv                                        ;         ;
+; miniALU_top.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/ssour/Documents/DAV 2023/Lab1/miniALU_top.sv                      ;         ;
+; ../../../Downloads/sevenSegDigit.sv   ; yes             ; User SystemVerilog HDL File  ; C:/Users/ssour/Downloads/sevenSegDigit.sv                                  ;         ;
+; lpm_divide.tdf                        ; yes             ; Megafunction                 ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal211.inc                        ; yes             ; Megafunction                 ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/aglobal211.inc      ;         ;
+; db/lpm_divide_mll.tdf                 ; yes             ; Auto-Generated Megafunction  ; C:/Users/ssour/Documents/DAV 2023/Lab1/db/lpm_divide_mll.tdf               ;         ;
+; db/sign_div_unsign_llh.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/ssour/Documents/DAV 2023/Lab1/db/sign_div_unsign_llh.tdf          ;         ;
+; db/alt_u_div_khe.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf                ;         ;
+; db/add_sub_t3c.tdf                    ; yes             ; Auto-Generated Megafunction  ; C:/Users/ssour/Documents/DAV 2023/Lab1/db/add_sub_t3c.tdf                  ;         ;
+; db/add_sub_u3c.tdf                    ; yes             ; Auto-Generated Megafunction  ; C:/Users/ssour/Documents/DAV 2023/Lab1/db/add_sub_u3c.tdf                  ;         ;
+; db/lpm_divide_jtl.tdf                 ; yes             ; Auto-Generated Megafunction  ; C:/Users/ssour/Documents/DAV 2023/Lab1/db/lpm_divide_jtl.tdf               ;         ;
+; db/lpm_divide_mtl.tdf                 ; yes             ; Auto-Generated Megafunction  ; C:/Users/ssour/Documents/DAV 2023/Lab1/db/lpm_divide_mtl.tdf               ;         ;
+; db/sign_div_unsign_olh.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/ssour/Documents/DAV 2023/Lab1/db/sign_div_unsign_olh.tdf          ;         ;
+; db/alt_u_div_qhe.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_qhe.tdf                ;         ;
+; db/lpm_divide_0vl.tdf                 ; yes             ; Auto-Generated Megafunction  ; C:/Users/ssour/Documents/DAV 2023/Lab1/db/lpm_divide_0vl.tdf               ;         ;
+; db/sign_div_unsign_2nh.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/ssour/Documents/DAV 2023/Lab1/db/sign_div_unsign_2nh.tdf          ;         ;
+; db/alt_u_div_eke.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_eke.tdf                ;         ;
+; db/lpm_divide_4vl.tdf                 ; yes             ; Auto-Generated Megafunction  ; C:/Users/ssour/Documents/DAV 2023/Lab1/db/lpm_divide_4vl.tdf               ;         ;
+; db/sign_div_unsign_6nh.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/ssour/Documents/DAV 2023/Lab1/db/sign_div_unsign_6nh.tdf          ;         ;
+; db/alt_u_div_mke.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_mke.tdf                ;         ;
+; db/lpm_divide_7vl.tdf                 ; yes             ; Auto-Generated Megafunction  ; C:/Users/ssour/Documents/DAV 2023/Lab1/db/lpm_divide_7vl.tdf               ;         ;
+; db/sign_div_unsign_9nh.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/ssour/Documents/DAV 2023/Lab1/db/sign_div_unsign_9nh.tdf          ;         ;
+; db/alt_u_div_ske.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_ske.tdf                ;         ;
++---------------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimated Total logic elements              ; 1,834        ;
+;                                             ;              ;
+; Total combinational functions               ; 1834         ;
+; Logic element usage by number of LUT inputs ;              ;
+;     -- 4 input functions                    ; 449          ;
+;     -- 3 input functions                    ; 529          ;
+;     -- <=2 input functions                  ; 856          ;
+;                                             ;              ;
+; Logic elements by mode                      ;              ;
+;     -- normal mode                          ; 1307         ;
+;     -- arithmetic mode                      ; 527          ;
+;                                             ;              ;
+; Total registers                             ; 0            ;
+;     -- Dedicated logic registers            ; 0            ;
+;     -- I/O registers                        ; 0            ;
+;                                             ;              ;
+; I/O pins                                    ; 58           ;
+;                                             ;              ;
+; Embedded Multiplier 9-bit elements          ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; optype~input ;
+; Maximum fan-out                             ; 107          ;
+; Total fan-out                               ; 4956         ;
+; Average fan-out                             ; 2.54         ;
++---------------------------------------------+--------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                    ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                              ; Entity Name         ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |miniALU_top                              ; 1834 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 58   ; 0            ; 0          ; |miniALU_top                                                                                                                     ; miniALU_top         ; work         ;
+;    |sevenSegDisplay:UUT|                  ; 1834 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT                                                                                                 ; sevenSegDisplay     ; work         ;
+;       |lpm_divide:Div0|                   ; 204 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_jtl:auto_generated|  ; 204 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Div0|lpm_divide_jtl:auto_generated                                                   ; lpm_divide_jtl      ; work         ;
+;             |sign_div_unsign_llh:divider| ; 204 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Div0|lpm_divide_jtl:auto_generated|sign_div_unsign_llh:divider                       ; sign_div_unsign_llh ; work         ;
+;                |alt_u_div_khe:divider|    ; 204 (204)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Div0|lpm_divide_jtl:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider ; alt_u_div_khe       ; work         ;
+;       |lpm_divide:Div1|                   ; 270 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Div1                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_mtl:auto_generated|  ; 270 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Div1|lpm_divide_mtl:auto_generated                                                   ; lpm_divide_mtl      ; work         ;
+;             |sign_div_unsign_olh:divider| ; 270 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Div1|lpm_divide_mtl:auto_generated|sign_div_unsign_olh:divider                       ; sign_div_unsign_olh ; work         ;
+;                |alt_u_div_qhe:divider|    ; 270 (270)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Div1|lpm_divide_mtl:auto_generated|sign_div_unsign_olh:divider|alt_u_div_qhe:divider ; alt_u_div_qhe       ; work         ;
+;       |lpm_divide:Div2|                   ; 280 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Div2                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_0vl:auto_generated|  ; 280 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Div2|lpm_divide_0vl:auto_generated                                                   ; lpm_divide_0vl      ; work         ;
+;             |sign_div_unsign_2nh:divider| ; 280 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Div2|lpm_divide_0vl:auto_generated|sign_div_unsign_2nh:divider                       ; sign_div_unsign_2nh ; work         ;
+;                |alt_u_div_eke:divider|    ; 280 (280)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Div2|lpm_divide_0vl:auto_generated|sign_div_unsign_2nh:divider|alt_u_div_eke:divider ; alt_u_div_eke       ; work         ;
+;       |lpm_divide:Div3|                   ; 209 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Div3                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_4vl:auto_generated|  ; 209 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Div3|lpm_divide_4vl:auto_generated                                                   ; lpm_divide_4vl      ; work         ;
+;             |sign_div_unsign_6nh:divider| ; 209 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Div3|lpm_divide_4vl:auto_generated|sign_div_unsign_6nh:divider                       ; sign_div_unsign_6nh ; work         ;
+;                |alt_u_div_mke:divider|    ; 209 (209)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Div3|lpm_divide_4vl:auto_generated|sign_div_unsign_6nh:divider|alt_u_div_mke:divider ; alt_u_div_mke       ; work         ;
+;       |lpm_divide:Div4|                   ; 97 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Div4                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_7vl:auto_generated|  ; 97 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Div4|lpm_divide_7vl:auto_generated                                                   ; lpm_divide_7vl      ; work         ;
+;             |sign_div_unsign_9nh:divider| ; 97 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Div4|lpm_divide_7vl:auto_generated|sign_div_unsign_9nh:divider                       ; sign_div_unsign_9nh ; work         ;
+;                |alt_u_div_ske:divider|    ; 97 (97)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Div4|lpm_divide_7vl:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_ske:divider ; alt_u_div_ske       ; work         ;
+;       |lpm_divide:Mod0|                   ; 207 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_mll:auto_generated|  ; 207 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Mod0|lpm_divide_mll:auto_generated                                                   ; lpm_divide_mll      ; work         ;
+;             |sign_div_unsign_llh:divider| ; 207 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Mod0|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider                       ; sign_div_unsign_llh ; work         ;
+;                |alt_u_div_khe:divider|    ; 207 (207)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Mod0|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider ; alt_u_div_khe       ; work         ;
+;       |lpm_divide:Mod1|                   ; 178 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Mod1                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_mll:auto_generated|  ; 178 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Mod1|lpm_divide_mll:auto_generated                                                   ; lpm_divide_mll      ; work         ;
+;             |sign_div_unsign_llh:divider| ; 178 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Mod1|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider                       ; sign_div_unsign_llh ; work         ;
+;                |alt_u_div_khe:divider|    ; 178 (178)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Mod1|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider ; alt_u_div_khe       ; work         ;
+;       |lpm_divide:Mod2|                   ; 136 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_mll:auto_generated|  ; 136 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Mod2|lpm_divide_mll:auto_generated                                                   ; lpm_divide_mll      ; work         ;
+;             |sign_div_unsign_llh:divider| ; 136 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Mod2|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider                       ; sign_div_unsign_llh ; work         ;
+;                |alt_u_div_khe:divider|    ; 136 (136)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Mod2|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider ; alt_u_div_khe       ; work         ;
+;       |lpm_divide:Mod3|                   ; 94 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Mod3                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_mll:auto_generated|  ; 94 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Mod3|lpm_divide_mll:auto_generated                                                   ; lpm_divide_mll      ; work         ;
+;             |sign_div_unsign_llh:divider| ; 94 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Mod3|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider                       ; sign_div_unsign_llh ; work         ;
+;                |alt_u_div_khe:divider|    ; 94 (94)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Mod3|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider ; alt_u_div_khe       ; work         ;
+;       |lpm_divide:Mod4|                   ; 38 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Mod4                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_mll:auto_generated|  ; 38 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Mod4|lpm_divide_mll:auto_generated                                                   ; lpm_divide_mll      ; work         ;
+;             |sign_div_unsign_llh:divider| ; 38 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Mod4|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider                       ; sign_div_unsign_llh ; work         ;
+;                |alt_u_div_khe:divider|    ; 38 (38)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|lpm_divide:Mod4|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider ; alt_u_div_khe       ; work         ;
+;       |miniALU:myALU|                     ; 44 (44)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|miniALU:myALU                                                                                   ; miniALU             ; work         ;
+;       |sevenSegDigit:five|                ; 14 (14)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|sevenSegDigit:five                                                                              ; sevenSegDigit       ; work         ;
+;       |sevenSegDigit:four|                ; 14 (14)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|sevenSegDigit:four                                                                              ; sevenSegDigit       ; work         ;
+;       |sevenSegDigit:one|                 ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|sevenSegDigit:one                                                                               ; sevenSegDigit       ; work         ;
+;       |sevenSegDigit:six|                 ; 14 (14)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|sevenSegDigit:six                                                                               ; sevenSegDigit       ; work         ;
+;       |sevenSegDigit:three|               ; 14 (14)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|sevenSegDigit:three                                                                             ; sevenSegDigit       ; work         ;
+;       |sevenSegDigit:two|                 ; 14 (14)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |miniALU_top|sevenSegDisplay:UUT|sevenSegDigit:two                                                                               ; sevenSegDigit       ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |miniALU_top|sevenSegDisplay:UUT|miniALU:myALU|n[11] ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |miniALU_top|sevenSegDisplay:UUT|miniALU:myALU|n[5]  ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |miniALU_top|sevenSegDisplay:UUT|miniALU:myALU|n[3]  ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |miniALU_top|sevenSegDisplay:UUT|miniALU:myALU|n[9]  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sevenSegDisplay:UUT|lpm_divide:Mod0 ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTHN             ; 20             ; Untyped                                    ;
+; LPM_WIDTHD             ; 4              ; Untyped                                    ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_PIPELINE           ; 0              ; Untyped                                    ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                    ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_mll ; Untyped                                    ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sevenSegDisplay:UUT|lpm_divide:Div0 ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTHN             ; 20             ; Untyped                                    ;
+; LPM_WIDTHD             ; 4              ; Untyped                                    ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_PIPELINE           ; 0              ; Untyped                                    ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                    ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_jtl ; Untyped                                    ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sevenSegDisplay:UUT|lpm_divide:Mod1 ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTHN             ; 20             ; Untyped                                    ;
+; LPM_WIDTHD             ; 4              ; Untyped                                    ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_PIPELINE           ; 0              ; Untyped                                    ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                    ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_mll ; Untyped                                    ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sevenSegDisplay:UUT|lpm_divide:Div1 ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTHN             ; 20             ; Untyped                                    ;
+; LPM_WIDTHD             ; 7              ; Untyped                                    ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_PIPELINE           ; 0              ; Untyped                                    ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                    ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_mtl ; Untyped                                    ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sevenSegDisplay:UUT|lpm_divide:Mod2 ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTHN             ; 20             ; Untyped                                    ;
+; LPM_WIDTHD             ; 4              ; Untyped                                    ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_PIPELINE           ; 0              ; Untyped                                    ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                    ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_mll ; Untyped                                    ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sevenSegDisplay:UUT|lpm_divide:Div2 ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTHN             ; 20             ; Untyped                                    ;
+; LPM_WIDTHD             ; 10             ; Untyped                                    ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_PIPELINE           ; 0              ; Untyped                                    ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                    ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_0vl ; Untyped                                    ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sevenSegDisplay:UUT|lpm_divide:Mod3 ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTHN             ; 20             ; Untyped                                    ;
+; LPM_WIDTHD             ; 4              ; Untyped                                    ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_PIPELINE           ; 0              ; Untyped                                    ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                    ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_mll ; Untyped                                    ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sevenSegDisplay:UUT|lpm_divide:Div3 ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTHN             ; 20             ; Untyped                                    ;
+; LPM_WIDTHD             ; 14             ; Untyped                                    ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_PIPELINE           ; 0              ; Untyped                                    ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                    ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_4vl ; Untyped                                    ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sevenSegDisplay:UUT|lpm_divide:Mod4 ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTHN             ; 20             ; Untyped                                    ;
+; LPM_WIDTHD             ; 4              ; Untyped                                    ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_PIPELINE           ; 0              ; Untyped                                    ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                    ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_mll ; Untyped                                    ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sevenSegDisplay:UUT|lpm_divide:Div4 ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTHN             ; 20             ; Untyped                                    ;
+; LPM_WIDTHD             ; 17             ; Untyped                                    ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_PIPELINE           ; 0              ; Untyped                                    ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                    ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_7vl ; Untyped                                    ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sevenSegDisplay:UUT|lpm_divide:Mod5 ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTHN             ; 20             ; Untyped                                    ;
+; LPM_WIDTHD             ; 4              ; Untyped                                    ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_PIPELINE           ; 0              ; Untyped                                    ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                    ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_mll ; Untyped                                    ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 58                          ;
+; cycloneiii_lcell_comb ; 1835                        ;
+;     arith             ; 527                         ;
+;         1 data inputs ; 10                          ;
+;         2 data inputs ; 52                          ;
+;         3 data inputs ; 465                         ;
+;     normal            ; 1308                        ;
+;         0 data inputs ; 99                          ;
+;         1 data inputs ; 33                          ;
+;         2 data inputs ; 663                         ;
+;         3 data inputs ; 64                          ;
+;         4 data inputs ; 449                         ;
+;                       ;                             ;
+; Max LUT depth         ; 43.40                       ;
+; Average LUT depth     ; 35.28                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:04     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
+    Info: Processing started: Mon Nov 13 01:26:27 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab1 -c lab1_top
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /users/ssour/downloads/sevensegdisplay.sv
+    Info (12023): Found entity 1: sevenSegDisplay File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/ssour/downloads/minialu.sv
+    Info (12023): Found entity 1: miniALU File: C:/Users/ssour/Downloads/miniALU.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file minialu_top.sv
+    Info (12023): Found entity 1: miniALU_top File: C:/Users/ssour/Documents/DAV 2023/Lab1/miniALU_top.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file minialu_tb.sv
+    Info (12023): Found entity 1: miniALU_tb File: C:/Users/ssour/Documents/DAV 2023/Lab1/miniALU_tb.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/ssour/downloads/sevensegdigit.sv
+    Info (12023): Found entity 1: sevenSegDigit File: C:/Users/ssour/Downloads/sevenSegDigit.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file sevensegdigit_tb.sv
+    Info (12023): Found entity 1: sevenSegDigit_tb File: C:/Users/ssour/Documents/DAV 2023/Lab1/sevenSegDigit_tb.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file sevensegdigit_top.sv
+    Info (12023): Found entity 1: sevenSegDigit_top File: C:/Users/ssour/Documents/DAV 2023/Lab1/sevenSegDigit_top.sv Line: 1
+Info (12127): Elaborating entity "miniALU_top" for the top level hierarchy
+Info (12128): Elaborating entity "sevenSegDisplay" for hierarchy "sevenSegDisplay:UUT" File: C:/Users/ssour/Documents/DAV 2023/Lab1/miniALU_top.sv Line: 16
+Warning (10230): Verilog HDL assignment warning at sevenSegDisplay.sv(39): truncated value with size 32 to match size of target (4) File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 39
+Warning (10230): Verilog HDL assignment warning at sevenSegDisplay.sv(41): truncated value with size 32 to match size of target (4) File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 41
+Warning (10230): Verilog HDL assignment warning at sevenSegDisplay.sv(43): truncated value with size 32 to match size of target (4) File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 43
+Warning (10230): Verilog HDL assignment warning at sevenSegDisplay.sv(45): truncated value with size 32 to match size of target (4) File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 45
+Warning (10230): Verilog HDL assignment warning at sevenSegDisplay.sv(47): truncated value with size 32 to match size of target (4) File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 47
+Warning (10230): Verilog HDL assignment warning at sevenSegDisplay.sv(49): truncated value with size 32 to match size of target (4) File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 49
+Info (12128): Elaborating entity "miniALU" for hierarchy "sevenSegDisplay:UUT|miniALU:myALU" File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 26
+Info (12128): Elaborating entity "sevenSegDigit" for hierarchy "sevenSegDisplay:UUT|sevenSegDigit:one" File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 28
+Info (278001): Inferred 11 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "sevenSegDisplay:UUT|Mod0" File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 39
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "sevenSegDisplay:UUT|Div0" File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 41
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "sevenSegDisplay:UUT|Mod1" File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 41
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "sevenSegDisplay:UUT|Div1" File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 43
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "sevenSegDisplay:UUT|Mod2" File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 43
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "sevenSegDisplay:UUT|Div2" File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 45
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "sevenSegDisplay:UUT|Mod3" File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 45
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "sevenSegDisplay:UUT|Div3" File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 47
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "sevenSegDisplay:UUT|Mod4" File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 47
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "sevenSegDisplay:UUT|Div4" File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 49
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "sevenSegDisplay:UUT|Mod5" File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 49
+Info (12130): Elaborated megafunction instantiation "sevenSegDisplay:UUT|lpm_divide:Mod0" File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 39
+Info (12133): Instantiated megafunction "sevenSegDisplay:UUT|lpm_divide:Mod0" with the following parameter: File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 39
+    Info (12134): Parameter "LPM_WIDTHN" = "20"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_mll.tdf
+    Info (12023): Found entity 1: lpm_divide_mll File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/lpm_divide_mll.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_llh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_llh File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/sign_div_unsign_llh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_khe.tdf
+    Info (12023): Found entity 1: alt_u_div_khe File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_t3c.tdf
+    Info (12023): Found entity 1: add_sub_t3c File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/add_sub_t3c.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
+    Info (12023): Found entity 1: add_sub_u3c File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/add_sub_u3c.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "sevenSegDisplay:UUT|lpm_divide:Div0" File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 41
+Info (12133): Instantiated megafunction "sevenSegDisplay:UUT|lpm_divide:Div0" with the following parameter: File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 41
+    Info (12134): Parameter "LPM_WIDTHN" = "20"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_jtl.tdf
+    Info (12023): Found entity 1: lpm_divide_jtl File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/lpm_divide_jtl.tdf Line: 25
+Info (12130): Elaborated megafunction instantiation "sevenSegDisplay:UUT|lpm_divide:Mod1" File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 41
+Info (12133): Instantiated megafunction "sevenSegDisplay:UUT|lpm_divide:Mod1" with the following parameter: File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 41
+    Info (12134): Parameter "LPM_WIDTHN" = "20"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "sevenSegDisplay:UUT|lpm_divide:Div1" File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 43
+Info (12133): Instantiated megafunction "sevenSegDisplay:UUT|lpm_divide:Div1" with the following parameter: File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 43
+    Info (12134): Parameter "LPM_WIDTHN" = "20"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_mtl.tdf
+    Info (12023): Found entity 1: lpm_divide_mtl File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/lpm_divide_mtl.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_olh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_olh File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/sign_div_unsign_olh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_qhe.tdf
+    Info (12023): Found entity 1: alt_u_div_qhe File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_qhe.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "sevenSegDisplay:UUT|lpm_divide:Div2" File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 45
+Info (12133): Instantiated megafunction "sevenSegDisplay:UUT|lpm_divide:Div2" with the following parameter: File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 45
+    Info (12134): Parameter "LPM_WIDTHN" = "20"
+    Info (12134): Parameter "LPM_WIDTHD" = "10"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_0vl.tdf
+    Info (12023): Found entity 1: lpm_divide_0vl File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/lpm_divide_0vl.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_2nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_2nh File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/sign_div_unsign_2nh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_eke.tdf
+    Info (12023): Found entity 1: alt_u_div_eke File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_eke.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "sevenSegDisplay:UUT|lpm_divide:Div3" File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 47
+Info (12133): Instantiated megafunction "sevenSegDisplay:UUT|lpm_divide:Div3" with the following parameter: File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 47
+    Info (12134): Parameter "LPM_WIDTHN" = "20"
+    Info (12134): Parameter "LPM_WIDTHD" = "14"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_4vl.tdf
+    Info (12023): Found entity 1: lpm_divide_4vl File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/lpm_divide_4vl.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_6nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_6nh File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/sign_div_unsign_6nh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_mke.tdf
+    Info (12023): Found entity 1: alt_u_div_mke File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_mke.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "sevenSegDisplay:UUT|lpm_divide:Div4" File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 49
+Info (12133): Instantiated megafunction "sevenSegDisplay:UUT|lpm_divide:Div4" with the following parameter: File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 49
+    Info (12134): Parameter "LPM_WIDTHN" = "20"
+    Info (12134): Parameter "LPM_WIDTHD" = "17"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_7vl.tdf
+    Info (12023): Found entity 1: lpm_divide_7vl File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/lpm_divide_7vl.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_9nh File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/sign_div_unsign_9nh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ske.tdf
+    Info (12023): Found entity 1: alt_u_div_ske File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_ske.tdf Line: 27
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "n1[7]" is stuck at VCC File: C:/Users/ssour/Documents/DAV 2023/Lab1/miniALU_top.sv Line: 7
+    Warning (13410): Pin "n2[7]" is stuck at VCC File: C:/Users/ssour/Documents/DAV 2023/Lab1/miniALU_top.sv Line: 8
+    Warning (13410): Pin "n3[7]" is stuck at VCC File: C:/Users/ssour/Documents/DAV 2023/Lab1/miniALU_top.sv Line: 9
+    Warning (13410): Pin "n4[7]" is stuck at VCC File: C:/Users/ssour/Documents/DAV 2023/Lab1/miniALU_top.sv Line: 10
+    Warning (13410): Pin "n5[7]" is stuck at VCC File: C:/Users/ssour/Documents/DAV 2023/Lab1/miniALU_top.sv Line: 11
+    Warning (13410): Pin "n6[7]" is stuck at VCC File: C:/Users/ssour/Documents/DAV 2023/Lab1/miniALU_top.sv Line: 14
+Info (286030): Timing-Driven Synthesis is running
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "sevenSegDisplay:UUT|lpm_divide:Mod1|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider|add_sub_19_result_int[0]~0" File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 82
+    Info (17048): Logic cell "sevenSegDisplay:UUT|lpm_divide:Mod1|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider|add_sub_7_result_int[0]~10" File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 112
+    Info (17048): Logic cell "sevenSegDisplay:UUT|lpm_divide:Mod1|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider|add_sub_8_result_int[0]~10" File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 117
+    Info (17048): Logic cell "sevenSegDisplay:UUT|lpm_divide:Mod1|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider|add_sub_9_result_int[0]~10" File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 122
+    Info (17048): Logic cell "sevenSegDisplay:UUT|lpm_divide:Mod1|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider|add_sub_10_result_int[0]~10" File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 37
+    Info (17048): Logic cell "sevenSegDisplay:UUT|lpm_divide:Mod1|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider|add_sub_11_result_int[0]~10" File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 42
+    Info (17048): Logic cell "sevenSegDisplay:UUT|lpm_divide:Mod1|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider|add_sub_12_result_int[0]~10" File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 47
+    Info (17048): Logic cell "sevenSegDisplay:UUT|lpm_divide:Mod1|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider|add_sub_13_result_int[0]~10" File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 52
+    Info (17048): Logic cell "sevenSegDisplay:UUT|lpm_divide:Mod1|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider|add_sub_14_result_int[0]~10" File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 57
+    Info (17048): Logic cell "sevenSegDisplay:UUT|lpm_divide:Mod1|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider|add_sub_15_result_int[0]~10" File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 62
+    Info (17048): Logic cell "sevenSegDisplay:UUT|lpm_divide:Mod1|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider|add_sub_16_result_int[0]~10" File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 67
+    Info (17048): Logic cell "sevenSegDisplay:UUT|lpm_divide:Mod1|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider|add_sub_17_result_int[0]~10" File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 72
+    Info (17048): Logic cell "sevenSegDisplay:UUT|lpm_divide:Mod1|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider|add_sub_18_result_int[0]~10" File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 77
+    Info (17048): Logic cell "sevenSegDisplay:UUT|lpm_divide:Mod2|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider|add_sub_19_result_int[0]~0" File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 82
+    Info (17048): Logic cell "sevenSegDisplay:UUT|lpm_divide:Mod2|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider|add_sub_10_result_int[0]~10" File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 37
+    Info (17048): Logic cell "sevenSegDisplay:UUT|lpm_divide:Mod2|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider|add_sub_11_result_int[0]~10" File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 42
+    Info (17048): Logic cell "sevenSegDisplay:UUT|lpm_divide:Mod2|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider|add_sub_12_result_int[0]~10" File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 47
+    Info (17048): Logic cell "sevenSegDisplay:UUT|lpm_divide:Mod2|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider|add_sub_13_result_int[0]~10" File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 52
+    Info (17048): Logic cell "sevenSegDisplay:UUT|lpm_divide:Mod2|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider|add_sub_14_result_int[0]~10" File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 57
+    Info (17048): Logic cell "sevenSegDisplay:UUT|lpm_divide:Mod2|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider|add_sub_15_result_int[0]~10" File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 62
+    Info (17048): Logic cell "sevenSegDisplay:UUT|lpm_divide:Mod2|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider|add_sub_16_result_int[0]~10" File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 67
+    Info (17048): Logic cell "sevenSegDisplay:UUT|lpm_divide:Mod2|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider|add_sub_17_result_int[0]~10" File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 72
+    Info (17048): Logic cell "sevenSegDisplay:UUT|lpm_divide:Mod2|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider|add_sub_18_result_int[0]~10" File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 77
+    Info (17048): Logic cell "sevenSegDisplay:UUT|lpm_divide:Mod3|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider|add_sub_19_result_int[0]~0" File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 82
+    Info (17048): Logic cell "sevenSegDisplay:UUT|lpm_divide:Mod3|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider|add_sub_13_result_int[0]~10" File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 52
+    Info (17048): Logic cell "sevenSegDisplay:UUT|lpm_divide:Mod3|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider|add_sub_14_result_int[0]~10" File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 57
+    Info (17048): Logic cell "sevenSegDisplay:UUT|lpm_divide:Mod3|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider|add_sub_15_result_int[0]~10" File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 62
+    Info (17048): Logic cell "sevenSegDisplay:UUT|lpm_divide:Mod3|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider|add_sub_16_result_int[0]~10" File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 67
+    Info (17048): Logic cell "sevenSegDisplay:UUT|lpm_divide:Mod3|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider|add_sub_17_result_int[0]~10" File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 72
+    Info (17048): Logic cell "sevenSegDisplay:UUT|lpm_divide:Mod3|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider|add_sub_18_result_int[0]~10" File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 77
+    Info (17048): Logic cell "sevenSegDisplay:UUT|lpm_divide:Mod4|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider|add_sub_19_result_int[0]~0" File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 82
+    Info (17048): Logic cell "sevenSegDisplay:UUT|lpm_divide:Mod4|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider|add_sub_17_result_int[0]~10" File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 72
+    Info (17048): Logic cell "sevenSegDisplay:UUT|lpm_divide:Mod4|lpm_divide_mll:auto_generated|sign_div_unsign_llh:divider|alt_u_div_khe:divider|add_sub_18_result_int[0]~10" File: C:/Users/ssour/Documents/DAV 2023/Lab1/db/alt_u_div_khe.tdf Line: 77
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1892 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 10 input pins
+    Info (21059): Implemented 48 output pins
+    Info (21061): Implemented 1834 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 14 warnings
+    Info: Peak virtual memory: 4808 megabytes
+    Info: Processing ended: Mon Nov 13 01:26:45 2023
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:13
+
+
