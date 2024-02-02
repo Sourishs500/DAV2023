@@ -1,0 +1,53 @@
+module sevenSegDisplay_alarm(
+	/* TODO: Ports go here (refer to lab spec) */
+   input [3:0] op1,
+	input [3:0] op2,
+	input optype,
+	input sw,
+	output [7:0] n1,
+	output [7:0] n2,
+	output [7:0] n3,
+	output [7:0] n4,
+	output [7:0] n5,
+	output [7:0] n6
+);
+	
+	/* TODO: Instantiate six copies of sevenSegDigit, one for each digit (calculated below)*/
+	
+	reg [3:0] first;
+	reg [3:0] second;
+	reg [3:0] third;
+	reg [3:0] fourth;
+	reg [3:0] fifth;
+	reg [3:0] sixth;
+	
+	logic [19:0] num;
+	
+	miniALU myALU(op1, op2, optype, num);
+	
+	sevenSegDigit one(first, sw, n6);
+	sevenSegDigit two(second, sw, n5);
+	sevenSegDigit three(third, sw, n4);
+	sevenSegDigit four(fourth, sw, n3);
+	sevenSegDigit five(fifth, sw, n2);
+	sevenSegDigit six(sixth, sw, n1);
+
+	// The following block will contain the logic of your combinational circuit
+	always_comb begin
+
+		/* TODO: Convert a 20-bit input number to six individual digits (4 bits each) */
+		sixth = num % 'd10;
+		
+		fifth = (num / 'd10) % 'd10;		// 
+		
+		fourth = (num / 'd100) % 'd10;
+		
+		third = (num / 'd1000) % 'd10;
+		
+		second = (num / 'd10000) % 'd10;
+		
+		first = (num / 'd100000) % 'd10;
+		
+	end
+
+endmodule

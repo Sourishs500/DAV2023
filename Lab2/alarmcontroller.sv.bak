@@ -1,0 +1,5 @@
+module alarmcontroller(
+input speedClk,
+input [8:0] switches,
+output 
+);
