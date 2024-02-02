@@ -1,0 +1,4 @@
+module buzzer_tb(output buzzer);
+	
+
+endmodule

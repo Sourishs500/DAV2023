@@ -1,0 +1,119 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/ssour/Documents/DAV 2023/Lab2/simulation/modelsim
+T_opt
+!s110 1705571569
+V1:5i=H>o0@ez`;laJ`Qo]3
+04 16 4 work clock_divider_tb fast 0
+=1-6ca1004feef8-65a8f4f0-388-714c
+!s124 OEM10U2 
+Z2 o-quiet -auto_acc_if_foreign -work work
+Z3 tCvgOpt 0
+n@_opt
+Z4 OL;O;2021.2;73
+R1
+T_opt1
+!s110 1706833731
+V;1=:]ZFJ<Om3]K<a4`@^e2
+04 9 4 work buzzer_tb fast 0
+=1-6ca1004feef8-65bc3743-b1-3604
+!s124 OEM10U3 
+R2
+R3
+n@_opt1
+R4
+vbuzzer
+Z5 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z6 !s110 1706833723
+!i10b 1
+!s100 4<;^7Gk[d29kP1fzKd3`z3
+IJ_ZePXVD>JFO84hK3@TK_2
+S1
+R1
+w1706833525
+8C:/Users/ssour/Documents/DAV 2023/Lab2/buzzer.sv
+FC:/Users/ssour/Documents/DAV 2023/Lab2/buzzer.sv
+!i122 1
+L0 1 23
+Z7 VDg1SIo80bB@j0V0VzS_@n1
+Z8 OL;L;2021.2;73
+r1
+!s85 0
+31
+Z9 !s108 1706833723.000000
+!s107 C:/Users/ssour/Documents/DAV 2023/Lab2/buzzer.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/ssour/Documents/DAV 2023/Lab2|C:/Users/ssour/Documents/DAV 2023/Lab2/buzzer.sv|
+!i113 0
+Z10 o-sv -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z11 !s92 -sv -work work {+incdir+C:/Users/ssour/Documents/DAV 2023/Lab2} -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+vbuzzer_tb
+R5
+R6
+!i10b 1
+!s100 OXjTG`32mOSUfeh2V<WN`2
+IQ5C0?g:B]Z3iIZ_;eC>JR1
+S1
+R1
+w1706833701
+8C:/Users/ssour/Documents/DAV 2023/Lab2/buzzer_tb.sv
+FC:/Users/ssour/Documents/DAV 2023/Lab2/buzzer_tb.sv
+!i122 2
+L0 3 15
+R7
+R8
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/ssour/Documents/DAV 2023/Lab2/buzzer_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/ssour/Documents/DAV 2023/Lab2|C:/Users/ssour/Documents/DAV 2023/Lab2/buzzer_tb.sv|
+!i113 0
+R10
+R11
+R3
+vclock_divider
+R5
+R6
+!i10b 1
+!s100 NKoO[S<15E[<a6>hGDQF30
+I`2?;Z<hDYEDTR2lZZY:e;0
+S1
+R1
+w1706777825
+8C:/Users/ssour/Documents/DAV 2023/Lab2/clock_divider.sv
+FC:/Users/ssour/Documents/DAV 2023/Lab2/clock_divider.sv
+!i122 0
+L0 2 43
+R7
+R8
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/ssour/Documents/DAV 2023/Lab2/clock_divider.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/ssour/Documents/DAV 2023/Lab2|C:/Users/ssour/Documents/DAV 2023/Lab2/clock_divider.sv|
+!i113 0
+R10
+R11
+R3
