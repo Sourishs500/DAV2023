@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab2
-Thu Feb  1 14:51:35 2024
+Thu Feb  1 19:03:31 2024
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -17,12 +17,13 @@ Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
   9. Removed Registers Triggering Further Register Optimizations
  10. General Register Statistics
  11. Parameter Settings for User Entity Instance: buzzer:UUT
- 12. Parameter Settings for User Entity Instance: buzzer:UUT|clock_divider:comb_3
- 13. Port Connectivity Checks: "buzzer:UUT|clock_divider:comb_3"
+ 12. Parameter Settings for User Entity Instance: buzzer:UUT|clock_divider:clk2
+ 13. Port Connectivity Checks: "buzzer:UUT|clock_divider:clk2"
  14. Port Connectivity Checks: "buzzer:UUT"
  15. Post-Synthesis Netlist Statistics for Top Partition
  16. Elapsed Time Per Partition
  17. Analysis & Synthesis Messages
+ 18. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -49,7 +50,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Feb  1 14:51:35 2024       ;
+; Analysis & Synthesis Status        ; Successful - Thu Feb  1 19:03:31 2024       ;
 ; Quartus Prime Version              ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                      ; lab2                                        ;
 ; Top-level Entity Name              ; buzzer_tb                                   ;
@@ -222,25 +223,25 @@ https://fpgasoftware.intel.com/eula.
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                    ;
-+------------------------------------------------+--------------------------------------+
-; Register name                                  ; Reason for Removal                   ;
-+------------------------------------------------+--------------------------------------+
-; buzzer:UUT|clock_divider:comb_3|counter[0..25] ; Stuck at GND due to stuck port clock ;
-; buzzer:UUT|clock_divider:comb_3|outClk         ; Stuck at GND due to stuck port clock ;
-; Total Number of Removed Registers = 27         ;                                      ;
-+------------------------------------------------+--------------------------------------+
++-------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                  ;
++----------------------------------------------+--------------------------------------+
+; Register name                                ; Reason for Removal                   ;
++----------------------------------------------+--------------------------------------+
+; buzzer:UUT|clock_divider:clk2|counter[0..25] ; Stuck at GND due to stuck port clock ;
+; buzzer:UUT|clock_divider:clk2|outClk         ; Stuck at GND due to stuck port clock ;
+; Total Number of Removed Registers = 27       ;                                      ;
++----------------------------------------------+--------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                    ;
-+---------------------------------------------+-------------------------+----------------------------------------+
-; Register name                               ; Reason for Removal      ; Registers Removed due to This Register ;
-+---------------------------------------------+-------------------------+----------------------------------------+
-; buzzer:UUT|clock_divider:comb_3|counter[25] ; Stuck at GND            ; buzzer:UUT|clock_divider:comb_3|outClk ;
-;                                             ; due to stuck port clock ;                                        ;
-+---------------------------------------------+-------------------------+----------------------------------------+
++--------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                  ;
++-------------------------------------------+-------------------------+----------------------------------------+
+; Register name                             ; Reason for Removal      ; Registers Removed due to This Register ;
++-------------------------------------------+-------------------------+----------------------------------------+
+; buzzer:UUT|clock_divider:clk2|counter[25] ; Stuck at GND            ; buzzer:UUT|clock_divider:clk2|outClk   ;
+;                                           ; due to stuck port clock ;                                        ;
++-------------------------------------------+-------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -258,37 +259,41 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------------+
-; Parameter Settings for User Entity Instance: buzzer:UUT ;
-+----------------+-----------------+----------------------+
-; Parameter Name ; Value           ; Type                 ;
-+----------------+-----------------+----------------------+
-; FREQ           ; 000001101110000 ; Unsigned Binary      ;
-+----------------+-----------------+----------------------+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: buzzer:UUT         ;
++----------------+------------------------------+-----------------+
+; Parameter Name ; Value                        ; Type            ;
++----------------+------------------------------+-----------------+
+; FREQ           ; 0000000001111010000100100000 ; Unsigned Binary ;
++----------------+------------------------------+-----------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: buzzer:UUT|clock_divider:comb_3 ;
-+----------------+----------+--------------------------------------------------+
-; Parameter Name ; Value    ; Type                                             ;
-+----------------+----------+--------------------------------------------------+
-; BASE_SPEED     ; 50000000 ; Signed Integer                                   ;
-+----------------+----------+--------------------------------------------------+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: buzzer:UUT|clock_divider:clk2 ;
++----------------+----------+------------------------------------------------+
+; Parameter Name ; Value    ; Type                                           ;
++----------------+----------+------------------------------------------------+
+; BASE_SPEED     ; 50000000 ; Signed Integer                                 ;
++----------------+----------+------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------+
-; Port Connectivity Checks: "buzzer:UUT|clock_divider:comb_3" ;
-+---------------+-------+----------+--------------------------+
-; Port          ; Type  ; Severity ; Details                  ;
-+---------------+-------+----------+--------------------------+
-; speed[9..8]   ; Input ; Info     ; Stuck at VCC             ;
-; speed[6..4]   ; Input ; Info     ; Stuck at VCC             ;
-; speed[20..10] ; Input ; Info     ; Stuck at GND             ;
-; speed[3..0]   ; Input ; Info     ; Stuck at GND             ;
-; speed[7]      ; Input ; Info     ; Stuck at GND             ;
-+---------------+-------+----------+--------------------------+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "buzzer:UUT|clock_divider:clk2" ;
++---------------+-------+----------+------------------------+
+; Port          ; Type  ; Severity ; Details                ;
++---------------+-------+----------+------------------------+
+; speed[18..15] ; Input ; Info     ; Stuck at VCC           ;
+; speed[20..19] ; Input ; Info     ; Stuck at GND           ;
+; speed[12..9]  ; Input ; Info     ; Stuck at GND           ;
+; speed[7..6]   ; Input ; Info     ; Stuck at GND           ;
+; speed[4..0]   ; Input ; Info     ; Stuck at GND           ;
+; speed[14]     ; Input ; Info     ; Stuck at GND           ;
+; speed[13]     ; Input ; Info     ; Stuck at VCC           ;
+; speed[8]      ; Input ; Info     ; Stuck at VCC           ;
+; speed[5]      ; Input ; Info     ; Stuck at VCC           ;
++---------------+-------+----------+------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -331,10 +336,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-    Info: Processing started: Thu Feb  1 14:51:27 2024
+    Info: Processing started: Thu Feb  1 19:03:18 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab2 -c lab2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /users/ssour/downloads/minialu.sv
+    Info (12023): Found entity 1: miniALU File: C:/Users/ssour/Downloads/miniALU.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/ssour/downloads/sevensegdisplay.sv
+    Info (12023): Found entity 1: sevenSegDisplay File: C:/Users/ssour/Downloads/sevenSegDisplay.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/ssour/downloads/sevensegdigit.sv
+    Info (12023): Found entity 1: sevenSegDigit File: C:/Users/ssour/Downloads/sevenSegDigit.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file clock_divider.sv
     Info (12023): Found entity 1: clock_divider File: C:/Users/ssour/Documents/DAV 2023/Lab2/clock_divider.sv Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file clock_divider_tb.sv
@@ -343,13 +354,19 @@ Info (12021): Found 1 design units, including 1 entities, in source file buzzer.
     Info (12023): Found entity 1: buzzer File: C:/Users/ssour/Documents/DAV 2023/Lab2/buzzer.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file buzzer_tb.sv
     Info (12023): Found entity 1: buzzer_tb File: C:/Users/ssour/Documents/DAV 2023/Lab2/buzzer_tb.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file alarmcontroller.sv
+    Info (12023): Found entity 1: alarmcontroller File: C:/Users/ssour/Documents/DAV 2023/Lab2/alarmcontroller.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file sevensegdisplay_alarm.sv
+    Info (12023): Found entity 1: sevenSegDisplay_alarm File: C:/Users/ssour/Documents/DAV 2023/Lab2/sevenSegDisplay_alarm.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file alarmcontroller_top.sv
+    Info (12023): Found entity 1: alarmcontroller_top File: C:/Users/ssour/Documents/DAV 2023/Lab2/alarmcontroller_top.sv Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at alarmcontroller.sv(13): created implicit net for "outClk" File: C:/Users/ssour/Documents/DAV 2023/Lab2/alarmcontroller.sv Line: 13
 Critical Warning (10846): Verilog HDL Instantiation warning at clock_divider_tb.sv(12): instance has no name File: C:/Users/ssour/Documents/DAV 2023/Lab2/clock_divider_tb.sv Line: 12
-Critical Warning (10846): Verilog HDL Instantiation warning at buzzer.sv(10): instance has no name File: C:/Users/ssour/Documents/DAV 2023/Lab2/buzzer.sv Line: 10
 Info (12127): Elaborating entity "buzzer_tb" for the top level hierarchy
 Warning (10175): Verilog HDL warning at buzzer_tb.sv(10): ignoring unsupported system task File: C:/Users/ssour/Documents/DAV 2023/Lab2/buzzer_tb.sv Line: 10
 Warning (10755): Verilog HDL warning at buzzer_tb.sv(14): assignments to clk create a combinational loop File: C:/Users/ssour/Documents/DAV 2023/Lab2/buzzer_tb.sv Line: 14
 Info (12128): Elaborating entity "buzzer" for hierarchy "buzzer:UUT" File: C:/Users/ssour/Documents/DAV 2023/Lab2/buzzer_tb.sv Line: 6
-Info (12128): Elaborating entity "clock_divider" for hierarchy "buzzer:UUT|clock_divider:comb_3" File: C:/Users/ssour/Documents/DAV 2023/Lab2/buzzer.sv Line: 10
+Info (12128): Elaborating entity "clock_divider" for hierarchy "buzzer:UUT|clock_divider:clk2" File: C:/Users/ssour/Documents/DAV 2023/Lab2/buzzer.sv Line: 10
 Warning (10230): Verilog HDL assignment warning at clock_divider.sv(17): truncated value with size 32 to match size of target (21) File: C:/Users/ssour/Documents/DAV 2023/Lab2/clock_divider.sv Line: 17
 Warning (10230): Verilog HDL assignment warning at clock_divider.sv(32): truncated value with size 32 to match size of target (26) File: C:/Users/ssour/Documents/DAV 2023/Lab2/clock_divider.sv Line: 32
 Warning (12011): Net is missing source, defaulting to GND
@@ -357,6 +374,7 @@ Warning (12011): Net is missing source, defaulting to GND
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "b" is stuck at GND File: C:/Users/ssour/Documents/DAV 2023/Lab2/buzzer_tb.sv Line: 3
+Info (144001): Generated suppressed messages file C:/Users/ssour/Documents/DAV 2023/Lab2/output_files/lab2.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Info (21057): Implemented 1 device resources after synthesis - the final resource count might be different
@@ -364,8 +382,14 @@ Info (21057): Implemented 1 device resources after synthesis - the final resourc
     Info (21059): Implemented 1 output pins
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
     Info: Peak virtual memory: 4753 megabytes
-    Info: Processing ended: Thu Feb  1 14:51:35 2024
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:09
+    Info: Processing ended: Thu Feb  1 19:03:31 2024
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:10
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/ssour/Documents/DAV 2023/Lab2/output_files/lab2.map.smsg.
 
 

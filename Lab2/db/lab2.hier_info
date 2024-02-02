@@ -3,12 +3,12 @@ b << buzzer:UUT.port2
 
 
 |buzzer_tb|buzzer:UUT
-clk => clock_divider:comb_3.clk
-reset => clock_divider:comb_3.reset
-pin <= clock_divider:comb_3.outClk
+clk => clock_divider:clk2.clk
+reset => clock_divider:clk2.reset
+pin <= clock_divider:clk2.outClk
 
 
-|buzzer_tb|buzzer:UUT|clock_divider:comb_3
+|buzzer_tb|buzzer:UUT|clock_divider:clk2
 clk => outClk~reg0.CLK
 clk => counter[0].CLK
 clk => counter[1].CLK

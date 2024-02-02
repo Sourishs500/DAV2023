@@ -30,11 +30,11 @@ module sevenSegDisplay_alarm(
 		
 		fourth = (num / 'd100) % 'd10;
 		
-		third = (num / 'd1000) % 'd10;
+		third = (num / 'd1000) % 'd6;
 		
-		second = (num / 'd10000) % 'd10;
+		second = (num / 'd6000) % 'd10;
 		
-		first = (num / 'd100000) % 'd10;
+		first = (num / 'd60000) % 'd10;
 		
 	end
 

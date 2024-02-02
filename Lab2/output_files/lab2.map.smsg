@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at alarmcontroller.sv(86): always construct contains both blocking and non-blocking assignments File: C:/Users/ssour/Documents/DAV 2023/Lab2/alarmcontroller.sv Line: 86
